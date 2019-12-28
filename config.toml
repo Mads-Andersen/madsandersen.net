@@ -1,4 +1,47 @@
-baseURL = "https://example.org/"
-languageCode = "en-us"
 title = "Mads Andersen"
-theme = "ananke"
+theme = "pulp"
+canonifyurls = true
+hasCJKLanguage = true
+# pygmentsCodefences = true
+# pygmentsUseClasses = true
+# googleAnalytics = "{your tracking code}"
+
+[taxonomies]
+  series = "series"
+
+[params]
+    author = "Mads Andersen"
+    avatar = "me.jpg"
+    favicon = "favicon.ico"
+    description = """
+        Description will come soon
+    """
+    publicationYear = "2020"
+    # listPageDateFormat = "January, 2006" # See https://gohugo.io/functions/format/
+    # singlePageDateFormat = "January 2, 2006"
+    # custom_css = ["/css/custom.css"]
+    # custom_js = ["/js/custom.js"]
+
+[outputs]
+    section = ["JSON", "HTML"]
+
+[[menu.main]]
+    identifier = "github"
+    # name = "GitHub"
+    pre = "<i class='fab fa-github fa-lg'></i>"
+    url = "https://github.com/Mads-Andersen"
+    weight = 30
+
+[[menu.main]]
+    identifier = "email"
+    # name = "Email"
+    pre = "<i class='fa fa-envelope fa-lg'></i>"
+    url = "mailto:bjerre+website@gmail.com"
+    weight = 40
+
+[[menu.main]]
+    identifier = "linkedin"
+    # name = "Blog" #If display text link, cancel comment out
+    pre = "<i class='fa fa-book-open fa-lg'></i>" #Choose your favorite font from Font Awesome
+    url = "https://www.linkedin.com/in/mads-bjerregaard-andersen-59ab27a4/"
+    weight = 10

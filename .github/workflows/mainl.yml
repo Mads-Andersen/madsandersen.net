@@ -1,0 +1,27 @@
+name: Hugo S3
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+        with:
+          submodules: "true"
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          working_directory: cv
+          root_file: cv.tex
+          latexmk_use_xelatex: true
+      - name: Copy cv to site
+        run: cp cv/cv.pdf static/cv.pdf
+      - name: Deploy site
+        uses: plopcas/hugo-s3-action@v1.3.0
+        env:
+          AWS_REGION: "eu-west-1"
+          AWS_ACCESS_KEY_ID: ${{ secrets.PRODUCTION_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.PRODUCTION_AWS_SECRET_ACCESS_KEY }}
+          MINIFY: "false"

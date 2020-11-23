@@ -1,0 +1,1 @@
+My personal site created using [Hugo](https://gohugo.io/) and the [hello-friend-ng](https://themes.gohugo.io/hugo-theme-hello-friend-ng/) theme. Automated resume creation and deployment to S3 and cloudfront. It can be found at [madsandersen.net](https://madsandersen.net)

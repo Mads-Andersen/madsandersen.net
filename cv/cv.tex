@@ -1,0 +1,154 @@
+%!TEX TS-program = xelatex
+\documentclass[]{friggeri-cv}
+\usepackage{afterpage}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{smartdiagram}
+\usepackage{fontspec}
+% if you want to add fontawesome package
+% you need to compile the tex file with LuaLaTeX
+% References:
+%   http://texdoc.net/texmf-dist/doc/latex/fontawesome/fontawesome.pdf
+%   https://www.ctan.org/tex-archive/fonts/fontawesome?lang=en
+%\usepackage{fontawesome}
+\usepackage{metalogo}
+\usepackage{dtklogos}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{mindmap,shadows}
+\hypersetup{
+    pdftitle={},
+    pdfauthor={},
+    pdfsubject={},
+    pdfkeywords={},
+    colorlinks=false,           % no lik border color
+    allbordercolors=white       % white border color for all
+}
+\smartdiagramset{
+    bubble center node font = \footnotesize,
+    bubble node font = \footnotesize,
+    % specifies the minimum size of the bubble center node
+    bubble center node size = 0.5cm,
+    %  specifies the minimum size of the bubbles
+    bubble node size = 0.5cm,
+    % specifies which is the distance among the bubble center node and the other bubbles
+    distance center/other bubbles = 0.3cm,
+    % sets the distance from the text to the border of the bubble center node
+    distance text center bubble = 0.5cm,
+    % set center bubble color
+    bubble center node color = pblue,
+    % define the list of colors usable in the diagram
+    set color list = {lightgray, materialcyan, orange, green, materialorange, materialteal, materialamber, materialindigo, materialgreen, materiallime},
+    % sets the opacity at which the bubbles are shown
+    bubble fill opacity = 0.6,
+    % sets the opacity at which the bubble text is shown
+    bubble text opacity = 0.5,
+}
+
+\addbibresource{bibliography.bib}
+\RequirePackage{xcolor}
+%\definecolor{pblue}{HTML}{4d4d4d}
+\definecolor{pblue}{HTML}{0395DE}
+
+\begin{document}
+\header{Mads Bjerregaard Andersen}{}
+      {Software Engineer}
+
+% Fake text to add separator
+\fcolorbox{white}{white}{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{%
+}}
+
+% In the aside, each new line forces a line break
+\begin{aside}
+  \includegraphics[scale=0.0382]{img/transparent.png}
+  \section{Address}
+    Mimersgade 93, 3th
+    Copenhagen, 2200
+    ~
+  \section{Contact}
+    +45 26 22 06 84
+    \href{mailto:bjerre@gmail.com}{bjerre@gmail.com}
+    madsandersen.net
+    ~
+  \section{Skills}
+    Node.js, Java, C\#, Python, SQL, PostgreSQL, NoSQL, MongoDB, Elasticsearch, Redis, Unix, Git, Hadoop, REST, Docker, Kubernetes, AWS, DevOps, Microservices
+    ~
+  \section{Languages}
+    Danish
+    English
+    ~
+\end{aside}
+~
+\section{Summary}
+Software engineer with a mindset for solving challenging problems. Main skills are solving problems, and learning new paradigms and technologies. A project will catch my attention if it involves some of my professional interests: Functional programming, parallel and scalable systems, designing simple and robust systems, automation, DevOps.
+
+\section{Experience}
+\begin{entrylist}
+    \entry
+    {2020 - 2020}
+    {Software Engineer}
+    {Proper}
+    {Optimized the CI/CD pipeline and worked on integrating e-conomic into their platform.}
+    \entry
+    {2017 - 2020}
+    {Software Engineer}
+    {GAN Integrity}
+    {The first year and a half I worked on the backend for the Campaign and Training module. The existing product was unstable and the company wanted a complete rewrite using a relational database.  
+    The work involved introducing a PostgreSQL database and migrating existing non-relational data into relational data.
+    A year ago I changed role to devops engineer where I automated pipelines and build tools that helped productivity for the other developers in the company.}
+    \entry
+    {2015 - 2017}
+    {Software Engineer}
+    {Falcon.io}
+    {Developing and maintaining the backend services of the Engage product. This involved moving the project out of a monolithic service and rewrite it into a new and an improved microservice architecture. The product handles millions of messages from social media networks which are stored in a way so the users of the platform have access to their conversations in milliseconds to which they can act on.}
+    \entry
+    {2013 - 2015}
+    {Software Engineer}
+    {Eniro}
+    {Developing and maintaining a web crawler and a web scraper. The web crawler involved running a Hadoop cluster system that fetched millions of web pages every day. The web scraper automatically identified and extracted entities from the web pages that were fetched by the web crawler.}
+    \entry
+    {2010 - 2012}
+    {Programmer (Part time)}
+    {IT-University of Copenhagen}
+    {Data visualization and electronic health records. In the project my main responsibility was to develop an integrated development environment that would let non-technical users create their own programs.}
+    \entry
+    {2010 - 2010}
+    {Teaching Assistant}
+    {IT-University of Copenhagen}
+    {Course: Systematic Design of User Interfaces.}
+    %{
+    %Developing and maintaining the backend services of the Engage product. 
+    %This involved moving the product out of a monolithic service and rewrite it into a new and an improved microservice architecture. 
+    %The product handles millions of messages from social media networks which are stored in a way so the users of the platform 
+    %have access to their conversations in milliseconds to which they can act on.}
+
+    %{
+    %Developing and maintaining the backend services of the Engage product. 
+    %This involved moving the project out of a monolithic service and rewrite it into a new and an improved version. 
+    %The project handles millions of messages from social networks which are stored in a way so the users of the platform 
+    %have access to their conversations in milliseconds to which they can act on.}
+
+    %Software engineer with a mindset for solving challenging problems. 
+    %Main skills are solving problems, and learning new paradigms and technologies.
+    %A project will catch my attention if it involves some of my professional interests: 
+    %Functional programming, parallel and scalable systems, designing simple and robust systems.
+\end{entrylist}
+\\
+\section{Education}
+\begin{entrylist}
+  \entry
+    {2011 - 2013}
+    {Master of Science in Information Technology}
+    {IT-University of Copenhagen}
+    {Majoring in Software Development and Technology.\newline
+    {\textit{Thesis: Parallel implementation of SISAL on the JVM}}
+    }
+  \entry
+    {2008 - 2011}
+    {Bachelor of Science in Information Technology}
+    {IT-University of Copenhagen}
+    {Majoring in Software Development}
+\end{entrylist}
+
+\end{document}

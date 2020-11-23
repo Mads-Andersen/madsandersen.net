@@ -1,47 +1,96 @@
-title = "Mads Andersen"
-theme = "pulp"
-canonifyurls = true
-hasCJKLanguage = true
-# pygmentsCodefences = true
-# pygmentsUseClasses = true
-# googleAnalytics = "{your tracking code}"
-
-[taxonomies]
-  series = "series"
+baseurl      = "https://madsandersen.net"
+title        = "testing"
+languageCode = "en-us"
+theme        = "hello-friend-ng"
+paginate     = 10
 
 [params]
-    author = "Mads Andersen"
-    avatar = "me.jpg"
-    favicon = "favicon.ico"
-    description = """
-        Description will come soon....
-    """
-    publicationYear = "2020"
-    # listPageDateFormat = "January, 2006" # See https://gohugo.io/functions/format/
-    # singlePageDateFormat = "January 2, 2006"
-    # custom_css = ["/css/custom.css"]
-    # custom_js = ["/js/custom.js"]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04"
 
-[outputs]
-    section = ["JSON", "HTML"]
+  # Subtitle for home
+  homeSubtitle = "Software Engineer"
 
-[[menu.main]]
-    identifier = "github"
-    # name = "GitHub"
-    pre = "<i class='fab fa-github fa-lg'></i>"
-    url = "https://github.com/Mads-Andersen"
-    weight = 30
+  # Set disableReadOtherPosts to true in order to hide the links to other posts.
+  disableReadOtherPosts = false
 
-[[menu.main]]
-    identifier = "email"
-    # name = "Email"
-    pre = "<i class='fa fa-envelope fa-lg'></i>"
-    url = "mailto:bjerre+website@gmail.com"
-    weight = 40
+  # Enable sharing buttons, if you linke
+  enableSharingButtons = true
 
-[[menu.main]]
-    identifier = "linkedin"
-    # name = "Blog" #If display text link, cancel comment out
-    pre = "<i class='fa fa-book-open fa-lg'></i>" #Choose your favorite font from Font Awesome
-    url = "https://www.linkedin.com/in/mads-bjerregaard-andersen-59ab27a4/"
-    weight = 10
+  # Metadata mostly used in document's head
+  description = "Homepage"
+  keywords = "homepage"
+  images = [""]
+
+  # Default theme "light" or "dark"
+  defaultTheme = "light"
+
+  footerLeft = "Powered by <a href=\"http://gohugo.io\">Hugo</a>"
+  footerRight = " "
+
+  [params.portrait]
+    path     = "/img/profile-square.jpg"
+    alt      = "Portrait"
+    maxWidth = "200px"
+
+  # Social icons
+  [[params.social]]
+    name = "email"
+    url  = "mailto:bjerre+website@gmail.com"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/Mads-Andersen"
+
+  [[params.social]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/in/mads-bjerregaard-andersen-59ab27a4/"
+
+[taxonomies]
+    category = "blog"
+    tag      = "tags"
+    series   = "series"
+
+[languages]
+  [languages.en]
+    title = "Mads Andersen"
+    keywords = ""
+    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+    readOtherPosts = "Read other posts"
+
+    [languages.en.params.logo]
+      logoText = "home/mads-andersen"
+      logoHomeLink = "/"
+    # or
+    #
+    # path = "/img/your-example-logo.svg"
+    # alt = "Your example logo alt text"
+
+  # And you can even create generic menu
+  [menu]
+    [[menu.main]]
+      identifier = "resume.md"
+      name       = "Resume"
+      url        = "/resume"
+      
+    [[menu.main]]
+      identifier = "me.md"
+      name       = "Me"
+      url        = "/me"
+
+[deployment]
+# By default, files are uploaded in an arbitrary order.
+# Files that match the regular expressions in the "Order" list
+# will be uploaded first, in the listed order.
+order = [".jpg$", ".gif$"]
+
+
+[[deployment.targets]]
+name = "mydeployment"
+URL = "s3://madsandersen.net?region=eu-west-1"
+
+# S3; see https://gocloud.dev/howto/blob/#s3
+# For S3-compatible endpoints, see https://gocloud.dev/howto/blob/#s3-compatible
+# URL = "s3://<Bucket Name>?region=<AWS region>"

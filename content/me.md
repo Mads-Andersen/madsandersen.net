@@ -1,6 +1,6 @@
 +++
 title = "Me"
-date = "2020-23-11"
+date = "2022-24-03"
 aliases = ["contact"]
 [ author ]
   name = "Mads Andersen"
